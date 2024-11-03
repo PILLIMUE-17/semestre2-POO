@@ -3,9 +3,9 @@ package EjercicioEva;
 
 
 public class ProductosCongelados extends Producto{
-    private int fechaEnvasado;
-    private String pais;
-    private double temperatura;
+    protected int fechaEnvasado;
+    protected String pais;
+    protected double temperatura;
 
     public ProductosCongelados(int fechaEnvasado, String pais, double temperatura, String fechaCaducidad, int lote) {
       
@@ -41,15 +41,28 @@ public class ProductosCongelados extends Producto{
         this.temperatura = temperatura;
     }
 
+    public int getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(int fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public int getLote() {
+        return lote;
+    }
+
+    public void setLote(int lote) {
+        this.lote = lote;
+    }
+
     @Override
     public String toString() {
         return "ProductosCongelados{" + "fechaEnvasado=" + fechaEnvasado + ", pais=" + pais + ", temperatura=" + temperatura + '}'+super.toString();
     }
 
-    @Override
-    public boolean verificarFechaCaducidad(int fechaActual) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+ 
     
     
     

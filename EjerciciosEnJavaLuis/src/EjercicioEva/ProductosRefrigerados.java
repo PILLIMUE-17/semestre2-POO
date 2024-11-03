@@ -2,7 +2,7 @@
 package EjercicioEva;
 
 
-public class ProductosRefrigerados {
+public class ProductosRefrigerados extends Producto {
     private int codigoSupervision;
     private int fechaEnvasado;
     private double temperatura;
@@ -51,9 +51,34 @@ public class ProductosRefrigerados {
         this.pais = pais;
     }
 
+    public int getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(int fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public int getLote() {
+        return lote;
+    }
+
+    public void setLote(int lote) {
+        this.lote = lote;
+    }
+
     @Override
     public String toString() {
-        return "ProductosRefrigerados{" + "codigoSupervision=" + codigoSupervision + ", fechaEnvasado=" + fechaEnvasado + ", temperatura=" + temperatura + ", pais=" + pais + '}'+super.toString();
+        return "ProductosRefrigerados: " + "CodigoSupervision= " + codigoSupervision + " FechaEnvasado= " + fechaEnvasado + " Temperatura= " + temperatura + " Pais= " + pais +" Lote= "+lote;
+    }
+
+    @Override
+    public boolean verificarFechaCaducidad(int fechaActual) {
+        if(fechaActual>fechaCaducidad){
+            return true;
+        }else{
+            return false;
+        }   
     }
     
     

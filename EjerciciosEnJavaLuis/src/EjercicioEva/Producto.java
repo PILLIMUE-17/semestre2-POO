@@ -5,9 +5,9 @@ package EjercicioEva;
  * ejercio 8.a.6
  * 
  */
-public abstract class  Producto {
+public class  Producto {
     protected int fechaCaducidad;
-    private int lote;
+    protected int lote;
 
     public Producto(int fechaCaducidad, int lote) {
         this.fechaCaducidad = fechaCaducidad;
@@ -38,7 +38,13 @@ public abstract class  Producto {
         return "Producto{" + "fechaCaducidad=" + fechaCaducidad + ", lote=" + lote + '}';
     }
     
-    public  abstract boolean verificarFechaCaducidad(int fechaActual);
+    public boolean verificarFechaCaducidad(int fechaActual){
+         if(fechaActual>fechaCaducidad){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     
 }

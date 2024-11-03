@@ -2,9 +2,11 @@
 package EjercicioEva;
 
 
-public class ProductoFresco{
+public class ProductoFresco extends Producto{
     private int fechaEnvasao;
     private String pais;
+    
+    
 
     public ProductoFresco(int fechaEnvasao, String pais, int fechaCaducidad, int lote) {
         
@@ -31,14 +33,34 @@ public class ProductoFresco{
         this.pais = pais;
     }
 
+    public int getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(int fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public int getLote() {
+        return lote;
+    }
+
+    public void setLote(int lote) {
+        this.lote = lote;
+    }
+
     @Override
     public String toString() {
-        return "ProductoFresco{" + "fechaEnvasao=" + fechaEnvasao + ", pais=" + pais + '}'+" "+super.toString();
+        return "ProductoFresco: " + " FechaEnvasao= " + fechaEnvasao + " Pais= " + pais +" FechaDeCaducidad= "+fechaCaducidad+" Lote= "+lote;
     }
     
     public   boolean verificarFechaCaducidad(int fechaActual){
-        System.out.println("metodo desarrollado en productofresco");
-        return true;
+        if(fechaActual>fechaCaducidad){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
     
